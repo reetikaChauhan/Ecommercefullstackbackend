@@ -8,6 +8,11 @@ const OrderSchema = new mongoose.Schema({
             item_id: {type:String},
           }]
     },
+    preferences: {
+        type: [String], // Array of preference tags
+        enum: ['keto', 'vegan', 'organic','lactose-free','vegetarian','Non-Vegetarian'], // Allowed values
+        required: true
+      },
     finalTotal: { type: String,unique:true, required: true },
     customername: { type: String,unique:true, required: true },
     customerAddress: { type: String,unique:true, required: true },
